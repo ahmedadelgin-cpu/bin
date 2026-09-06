@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المتجر الكامل | بن أبو كيان</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Tajawal', sans-serif; background-color: #fdfaf7; scroll-behavior: smooth; }
+        .nav-glass { background: rgba(253, 250, 247, 0.9); backdrop-filter: blur(12px); }
+        
+        .product-card { 
+            background: #ffffff; 
+            border: 1px solid #e9e0d6; 
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .product-card:hover { 
+            transform: translateY(-10px); 
+            border-color: #a67b5b;
+            box-shadow: 0 20px 40px rgba(166, 123, 91, 0.1);
+        }
+
+        .filter-btn.active {
+            background-color: #5d4037;
+            color: white;
+            border-color: #5d4037;
+        }
+
+        .product-img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 1.5rem;
+        }
+
+        /* تصميم زر تسوق الآن في الناف بار */
+        .btn-shop-nav { 
+            background-color: #a67b5b; 
+            transition: all 0.3s ease; 
+        }
+        .btn-shop-nav:hover { 
+            background-color: #5d4037; 
+            transform: scale(1.05); 
+        }
+    </style>
+</head>
+<body class="text-stone-800">
+
+    <!-- Navigation -->
+    <nav class="nav-glass sticky top-0 z-50 border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            
+            <!-- زر تسوق الآن (الجهة اليمنى) -->
+            <div class="flex-shrink-0">
+                <a href="shopping.html" class="btn-shop-nav text-white px-8 md:px-10 py-3 rounded-full font-black shadow-lg text-sm inline-block">
+                    تسوق الآن
+                </a>
+            </div>
+
+            <!-- Logo Section (المنتصف) -->
+            <div class="text-center flex flex-col items-center">
+                <img src="photo/لوجو ابو كيان.jfif" alt="لوجو" class="h-10 w-auto mb-1 rounded-sm shadow-sm">
+                <h1 class="text-xl md:text-2xl font-[900] tracking-tight text-[#5d4037]">
+                    <span class="text-[#a67b5b]">بن</span> أبو كيان
+                </h1>
+                <p class="text-[8px] tracking-[0.3em] text-[#a67b5b] font-bold uppercase">Roastery & Heritage</p>
+            </div>
+
+            <!-- Menu (الجهة اليسرى) -->
+            <div class="hidden lg:flex items-center gap-8 font-bold text-sm text-[#8d6e63]">
+                <a href="Home.html" class="hover:text-[#a67b5b] transition">الرئيسية</a>
+                <a href="coffee.html" class="hover:text-[#a67b5b] transition">أنواع البن</a>
+                <a href="nescafe.html" class="hover:text-[#a67b5b] transition">النسكافيهات</a>
+                <a href="branches.html" class="hover:text-[#a67b5b] transition">فروعنا</a>
+                <a href="shopping.html" class="text-[#a67b5b] border-b-2 border-[#a67b5b]">التسوق</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="py-12 bg-[#f5f0eb] text-center">
+        <h2 class="text-4xl font-black text-[#5d4037] mb-2">المتجر الشامل</h2>
+        <div class="w-20 h-1 bg-[#a67b5b] mx-auto mb-4"></div>
+        <p class="text-[#8d6e63] font-bold text-sm uppercase tracking-widest">تجد هنا كل ما تحتاجه لقهوتك</p>
+    </header>
+
+    <!-- Filter Buttons -->
+    <div class="max-w-7xl mx-auto px-6 py-8 flex justify-center gap-3 flex-wrap sticky top-24 z-40">
+        <button onclick="filterItems('all', this)" class="filter-btn active px-8 py-2 rounded-full border border-[#e9e0d6] font-bold text-sm transition">الكل</button>
+        <button onclick="filterItems('coffee', this)" class="filter-btn px-8 py-2 rounded-full border border-[#e9e0d6] font-bold text-sm transition text-[#8d6e63]">أنواع البن</button>
+        <button onclick="filterItems('nescafe', this)" class="filter-btn px-8 py-2 rounded-full border border-[#e9e0d6] font-bold text-sm transition text-[#8d6e63]">النسكافيهات</button>
+    </div>
+
+    <!-- Main Grid - يحتوي على الـ 13 منتجاً -->
+    <main class="max-w-7xl mx-auto px-6 pb-24">
+        <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <!-- 1. بن سانتوس -->
+            <div class="product-card rounded-[2rem] p-5 coffee">
+                <img src="photo/بن سانتوس الفاخر.jfif" class="product-img mb-4">
+                <h3 class="font-black text-[#5d4037] text-lg text-center">بن سانتوس الفاخر</h3>
+                <div class="flex items-center justify-between mt-6">
+                    <span class="text-xl font-black text-[#a67b5b]">380 <small class="text-xs">ج.م</small></span>
+                    <button class="bg-[#f5f0eb] w-10 h-10 rounded-xl text-[#5d4037] hover:bg-[#a67b5b] hover:text-white transition"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <!-- 2. بن سيدامو -->
+            <div class="product-card rounded-[2rem] p-5 coffee">
+                <img src="photo/بن سيدامو المختص.jfif" class="product-img mb-4">
+                <h3 class="font-black text-[#5d4037] text-lg text-center">بن سيدامو المختص</h3>
+                <div class="flex items-center justify-between mt-6">
+                    <span class="text-xl font-black text-[#a67b5b]">450 <small class="text-xs">ج.م</small></span>
+                    <button class="bg-[#f5f0eb] w-10 h-10 rounded-xl text-[#5d4037] hover:bg-[#a67b5b] hover:text-white transition"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <!-- 3. خلطة كيان إسبريسو -->
+            <div class="product-card rounded-[2rem] p-5 coffee">
+                <img src="photo/خلطة كيان للإسبريسو.jfif" class="product-img mb-4">
+                <h3 class="font-black text-[#5d4037] text-lg text-center">خلطة كيان إسبريسو</h3>
+                <div class="flex items-center justify-between mt-6">
+                    <span class="text-xl font-black text-[#a67b5b]">520 <small class="text-xs">ج.م</small></span>
+                    <button class="bg-[#f5f0eb] w-10 h-10 rounded-xl text-[#5d4037] hover:bg-[#a67b5b] hover:text-white transition"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <!-- 4. بن حبشي -->
+            <div class="product-card rounded-[2rem] p-5 coffee">
+                <img src="photo/بن حبشي (إثيوبي).jfif" class="product-img mb-4">
+                <h3 class="font-black text-[#5d4037] text-lg text-center">بن حبشي (إثيوبي)</h3>
+                <div class="flex items-center justify-between mt-6">
+                    <span class="text-xl font-black text-[#a67b5b]">590 <small class="text-xs">ج.م</small></span>
+                    <button class="bg-[#f5f0eb] w-10 h-10 rounded-xl text-[#5d4037] hover:bg-[#a67b5b] hover:text-white transition"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <!-- 5. كيس بن كولومبي -->
+            <div class="product-card rounded-[2rem] p-5 coffee">
+                <img src="photo/كيس بن كلومى.jfif" class="product-img mb-4">
+                <h3 class="font-black text-[#5d4037] text-lg text-center">بن كولومبي مختص</h3>
+                <div class="flex items-center justify-between mt-6">
+                    <span class="text-xl font-black text-[#a67b5b]">590 <small class="text-xs">ج.م</small></span>
+                    <button class="bg-[#f5f0eb] w-10 h-10 rounded-xl text-[#5d4037] hover:bg-[#a67b5b] hover:text-white transition"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <!-- 6. بن تركي محوج -->
+            <div class="product-card rounded-[2rem] p-5 coffee">
+                <img src="photo/بن تركي محوج.jfif" class="product-img mb-4">
+                <h3 class="font-black text-[#5d4037] text-lg text-center">بن تركي محوج</h3>
+                <div class="flex items-center justify-between mt-6">
+                    <span class="text-xl font-black text-[#a67b5b]">590 <small class="text-xs">ج.م</small></span>
+                    <button class="bg-[#f5f0eb] w-10 h-10 rounded-xl text-[#5d4037] hover:bg-[#a67b5b] hover:text-white transition"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <!-- 7. بن تركي سادة -->
+            <div class="product-card rounded-[2rem] p-5 coffee">
+                <img src="photo/بن تركي سادة.jfif" class="product-img mb-4">
+                <h3 class="font-black text-[#5d4037] text-lg text-center">بن تركي سادة</h3>
+                <div class="flex items-center justify-between mt-6">
+                    <span class="text-xl font-black text-[#a67b5b]">590 <small class="text-xs">ج.م</small></span>
+                    <button class="bg-[#f5f0eb] w-10 h-10 rounded-xl text-[#5d4037] hover:bg-[#a67b5b] hover:text-white transition"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <!-- 8. نساكفيه أوريجينز -->
+            <div class="product-card rounded-[2rem] p-5 nescafe">
+                <img src="photo/نسكافيه جولد أوريجينز.jfif" class="product-img mb-4">
+                <h3 class="font-black text-[#5d4037] text-lg text-center">جولد أوريجينز</h3>
+                <div class="flex items-center justify-between mt-6">
+                    <span class="text-xl font-black text-[#a67b5b]">260 <small class="text-xs">ج.م</small></span>
+                    <button class="bg-[#f5f0eb] w-10 h-10 rounded-xl text-[#5d4037] hover:bg-[#a67b5b] hover:text-white transition"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <!-- 9. جولد إسبريسو -->
+            <div class="product-card rounded-[2rem] p-5 nescafe">
+                <img src="photo/نسكافيه جولد إسبريسو.jfif" class="product-img mb-4">
+                <h3 class="font-black text-[#5d4037] text-lg text-center">جولد إسبريسو</h3>
+                <div class="flex items-center justify-between mt-6">
+                    <span class="text-xl font-black text-[#a67b5b]">350 <small class="text-xs">ج.م</small></span>
+                    <button class="bg-[#f5f0eb] w-10 h-10 rounded-xl text-[#5d4037] hover:bg-[#a67b5b] hover:text-white transition"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <!-- 10. جولد كلاسيك -->
+            <div class="product-card rounded-[2rem] p-5 nescafe">
+                <img src="photo/نسكافيه جولد كلاسيك.jfif" class="product-img mb-4">
+                <h3 class="font-black text-[#5d4037] text-lg text-center">جولد كلاسيك</h3>
+                <div class="flex items-center justify-between mt-6">
+                    <span class="text-xl font-black text-[#a67b5b]">500 <small class="text-xs">ج.م</small></span>
+                    <button class="bg-[#f5f0eb] w-10 h-10 rounded-xl text-[#5d4037] hover:bg-[#a67b5b] hover:text-white transition"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <!-- 11. كبسولات دولتشي -->
+            <div class="product-card rounded-[2rem] p-5 nescafe">
+                <img src="photo/كبسولات نسكافيه دولتشي غوستو.jpg" class="product-img mb-4">
+                <h3 class="font-black text-[#5d4037] text-lg text-center">كبسولات دولتشي</h3>
+                <div class="flex items-center justify-between mt-6">
+                    <span class="text-xl font-black text-[#a67b5b]">399 <small class="text-xs">ج.م</small></span>
+                    <button class="bg-[#f5f0eb] w-10 h-10 rounded-xl text-[#5d4037] hover:bg-[#a67b5b] hover:text-white transition"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <!-- 12. أظرف كابتشينو -->
+            <div class="product-card rounded-[2rem] p-5 nescafe">
+                <img src="photo/أظرف نسكافيه جولد كابتشينو ولاتيه.jfif" class="product-img mb-4">
+                <h3 class="font-black text-[#5d4037] text-lg text-center">أظرف ميكس جولد</h3>
+                <div class="flex items-center justify-between mt-6">
+                    <span class="text-xl font-black text-[#a67b5b]">150 <small class="text-xs">ج.م</small></span>
+                    <button class="bg-[#f5f0eb] w-10 h-10 rounded-xl text-[#5d4037] hover:bg-[#a67b5b] hover:text-white transition"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <!-- 13. نسكافيه جولد عادي -->
+            <div class="product-card rounded-[2rem] p-5 nescafe">
+                <img src="photo/نسكافيه جولد.jfif" class="product-img mb-4">
+                <h3 class="font-black text-[#5d4037] text-lg text-center">نسكافيه جولد</h3>
+                <div class="flex items-center justify-between mt-6">
+                    <span class="text-xl font-black text-[#a67b5b]">160 <small class="text-xs">ج.م</small></span>
+                    <button class="bg-[#f5f0eb] w-10 h-10 rounded-xl text-[#5d4037] hover:bg-[#a67b5b] hover:text-white transition"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer Section (كما في الصورة) -->
+    <footer class="bg-[#5d4037] text-[#f5f0eb] pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-right">
+            
+            <!-- الوصف -->
+            <div>
+                <h2 class="text-4xl font-black mb-6">بن أبو كيان</h2>
+                <p class="text-white/70 leading-loose text-sm italic">نحن لا نبيع البن فحسب، بل نحمص الشغف لنصنع لك كوباً يغير مزاجك.</p>
+            </div>
+
+            <!-- الروابط -->
+            <div>
+                <h4 class="font-black text-lg mb-8 text-[#a67b5b] uppercase tracking-widest">روابط سريعة</h4>
+                <ul class="space-y-4 text-white/80 font-medium">
+                    <li><a href="Home.html" class="hover:text-[#a67b5b]">الرئيسية</a></li>
+                    <li><a href="coffee.html" class="hover:text-[#a67b5b]">أنواع البن</a></li>
+                    <li><a href="nescafe.html" class="hover:text-[#a67b5b]">النسكافيهات</a></li>
+                    <li><a href="branches.html" class="hover:text-[#a67b5b]">فروعنا</a></li>
+                    <li><a href="shopping.html" class="hover:text-[#a67b5b]">التسوق</a></li>
+                </ul>
+            </div>
+
+            <!-- التواصل -->
+            <div>
+                <h4 class="font-black text-lg mb-8 text-[#a67b5b] uppercase tracking-widest">تواصل مباشر</h4>
+                <div class="flex gap-4">
+                    <a href="#" class="w-14 h-14 rounded-xl bg-white/5 flex items-center justify-center hover:bg-[#a67b5b] transition-all"><i class="fa-brands fa-whatsapp text-2xl"></i></a>
+                    <a href="#" class="w-14 h-14 rounded-xl bg-white/5 flex items-center justify-center hover:bg-[#a67b5b] transition-all"><i class="fa-brands fa-instagram text-2xl"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-20 text-white/20 text-[10px] font-bold uppercase tracking-widest border-t border-white/5 pt-10">
+            &copy; 2026 BIN ABU KAYAN COFFEE ROASTERS. ALL RIGHTS RESERVED.
+        </div>
+    </footer>
+
+    <!-- Filter Script -->
+    <script>
+        function filterItems(category, btn) {
+            const items = document.querySelectorAll('.product-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            items.forEach(item => {
+                if (category === 'all') {
+                    item.style.display = 'block';
+                } else if (item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

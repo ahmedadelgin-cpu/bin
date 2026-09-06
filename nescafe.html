@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أنواع النسكافيه | بن أبو كيان</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Tajawal', sans-serif; background-color: #fdfaf7; }
+        .nav-glass { background: rgba(253, 250, 247, 0.9); backdrop-filter: blur(12px); }
+        
+        /* تحسين البطاقة لتكون أصغر وأكثر أناقة */
+        .nescafe-item { 
+            background: #ffffff; 
+            border-radius: 2rem; 
+            border: 1px solid #e9e0d6; 
+            transition: 0.4s;
+            max-width: 700px; 
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .nescafe-item:hover { border-color: #a67b5b; box-shadow: 0 15px 30px rgba(166, 123, 91, 0.08); }
+        
+        .product-img {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 1.5rem;
+        }
+
+        /* تصميم زر تسوق الآن */
+        .btn-shop { 
+            background-color: #a67b5b; 
+            transition: all 0.3s ease; 
+        }
+        .btn-shop:hover { 
+            background-color: #5d4037; 
+            transform: scale(1.05); 
+        }
+    </style>
+</head>
+<body class="text-stone-800">
+
+    <!-- Navigation -->
+    <nav class="nav-glass sticky top-0 z-50 border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            
+            <!-- زر تسوق الآن (الجهة اليمنى) -->
+            <div class="flex-shrink-0">
+                <a href="shopping.html" class="btn-shop text-white px-10 py-3 rounded-full font-black shadow-lg text-sm md:text-base inline-block">
+                    تسوق الآن
+                </a>
+            </div>
+
+            <!-- Logo (المنتصف) -->
+            <div class="text-center flex flex-col items-center">
+                <img src="photo/لوجو ابو كيان.jfif" alt="لوجو" class="h-10 w-auto mb-1 rounded-sm shadow-sm">
+                <h1 class="text-xl md:text-2xl font-[900] tracking-tight text-[#5d4037]">
+                    <span class="text-[#a67b5b]">بن</span> أبو كيان
+                </h1>
+                <p class="text-[8px] tracking-[0.3em] text-[#a67b5b] font-bold uppercase italic">Roastery & Heritage</p>
+            </div>
+
+            <!-- Menu (الجهة اليسرى) -->
+            <div class="hidden lg:flex items-center gap-10 font-bold text-sm text-[#8d6e63]">
+                <a href="Home.html" class="hover:text-[#a67b5b] transition">الرئيسية</a>
+                <a href="coffee.html" class="hover:text-[#a67b5b] transition">أنواع البن</a>
+                <a href="nescafe.html" class="text-[#a67b5b] border-b-2 border-[#a67b5b]">النسكافيهات</a>
+                <a href="branches.html" class="hover:text-[#a67b5b] transition">فروعنا</a>
+                <a href="shopping.html" class="hover:text-[#a67b5b] transition">التسوق</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="max-w-7xl mx-auto px-6 py-10 text-center">
+        <h2 class="text-3xl font-black text-[#5d4037]">عالم النسكافيه</h2>
+        <div class="w-16 h-1 bg-[#a67b5b] mx-auto mt-4"></div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 space-y-8 pb-20">
+        <!-- المنتجات -->
+        <div class="nescafe-item flex flex-col md:flex-row items-center p-4 gap-6">
+            <img src="photo/نسكافيه جولد أوريجينز.jfif" class="product-img shadow-sm">
+            <div class="text-right flex-1">
+                <h3 class="text-xl font-black text-[#5d4037] mb-2">نسكافيه جولد أوريجينز</h3>
+                <p class="text-[#8d6e63] text-sm leading-relaxed h-10">طعم غني وناعم للرواق الذهبي الفاخر المستخلص من أجود الحبوب.</p>
+                <div class="mt-4 flex items-center justify-between">
+                    <span class="text-xl font-black text-[#a67b5b]">260 <small class="text-xs">ج.م</small></span>
+                    <a href="shopping.html" class="bg-[#f5f0eb] text-[#5d4037] text-xs font-bold px-4 py-2 rounded-xl hover:bg-[#a67b5b] hover:text-white transition">أطلب الآن</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="nescafe-item flex flex-col md:flex-row items-center p-4 gap-6">
+            <img src="photo/نسكافيه جولد إسبريسو.jfif" class="product-img shadow-sm">
+            <div class="text-right flex-1">
+                <h3 class="text-xl font-black text-[#5d4037] mb-2">نسكافيه جولد إسبريسو</h3>
+                <p class="text-[#8d6e63] text-sm leading-relaxed h-10">التركيز الذهبي الذي تحتاجه في يومك بطعم غني وكريمة كثيفة.</p>
+                <div class="mt-4 flex items-center justify-between">
+                    <span class="text-xl font-black text-[#a67b5b]">350 <small class="text-xs">ج.م</small></span>
+                    <a href="shopping.html" class="bg-[#f5f0eb] text-[#5d4037] text-xs font-bold px-4 py-2 rounded-xl hover:bg-[#a67b5b] hover:text-white transition">أطلب الآن</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="nescafe-item flex flex-col md:flex-row items-center p-4 gap-6">
+            <img src="photo/نسكافيه جولد كلاسيك.jfif" class="product-img shadow-sm">
+            <div class="text-right flex-1">
+                <h3 class="text-xl font-black text-[#5d4037] mb-2">نسكافيه جولد كلاسيك</h3>
+                <p class="text-[#8d6e63] text-sm leading-relaxed h-10">القهوة الذهبية سريعة التحضير بالطعم المتوازن والمحبوب للجميع.</p>
+                <div class="mt-4 flex items-center justify-between">
+                    <span class="text-xl font-black text-[#a67b5b]">500 <small class="text-xs">ج.م</small></span>
+                    <a href="shopping.html" class="bg-[#f5f0eb] text-[#5d4037] text-xs font-bold px-4 py-2 rounded-xl hover:bg-[#a67b5b] hover:text-white transition">أطلب الآن</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="nescafe-item flex flex-col md:flex-row items-center p-4 gap-6">
+            <img src="photo/كبسولات نسكافيه دولتشي غوستو.jpg" class="product-img shadow-sm">
+            <div class="text-right flex-1">
+                <h3 class="text-xl font-black text-[#5d4037] mb-2">كبسولات نسكافيه دولتشي غوستو</h3>
+                <p class="text-[#8d6e63] text-sm leading-relaxed h-10">متعة القهوة المحضرة آلياً بمجموعة من النكهات التي ترضي ذوقك.</p>
+                <div class="mt-4 flex items-center justify-between">
+                    <span class="text-xl font-black text-[#a67b5b]">399 <small class="text-xs">ج.م</small></span>
+                    <a href="shopping.html" class="bg-[#f5f0eb] text-[#5d4037] text-xs font-bold px-4 py-2 rounded-xl hover:bg-[#a67b5b] hover:text-white transition">أطلب الآن</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section (المطابق للصورة) -->
+    <footer class="bg-[#5d4037] text-[#f5f0eb] pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-right border-t border-white/5 pt-10">
+            <div>
+                <h2 class="text-4xl font-black mb-6">بن أبو كيان</h2>
+                <p class="text-white/70 leading-loose text-sm italic max-w-sm">
+                    نحن لا نبيع البن فحسب، بل نحمص الشغف لنصنع لك كوباً يغير مزاجك.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-black text-lg mb-8 text-[#a67b5b] uppercase tracking-widest">روابط سريعة</h4>
+                <ul class="space-y-4 text-white/80 font-medium">
+                    <li><a href="Home.html" class="hover:text-[#a67b5b]">الرئيسية</a></li>
+                    <li><a href="coffee.html" class="hover:text-[#a67b5b]">أنواع البن</a></li>
+                    <li><a href="nescafe.html" class="hover:text-[#a67b5b]">النسكافيهات</a></li>
+                    <li><a href="branches.html" class="hover:text-[#a67b5b]">فروعنا</a></li>
+                    <li><a href="shopping.html" class="hover:text-[#a67b5b]">التسوق</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-black text-lg mb-8 text-[#a67b5b] uppercase tracking-widest">تواصل مباشر</h4>
+                <div class="flex gap-4">
+                    <a href="https://wa.me/201234567890" class="w-14 h-14 rounded-xl bg-white/5 flex items-center justify-center hover:bg-[#a67b5b] transition-all">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    </a>
+                    <a href="#" class="w-14 h-14 rounded-xl bg-white/5 flex items-center justify-center hover:bg-[#a67b5b] transition-all">
+                        <i class="fa-brands fa-instagram text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-20 text-white/20 text-[10px] font-bold uppercase tracking-widest">
+            &copy; 2026 BIN ABU KAYAN COFFEE ROASTERS. ALL RIGHTS RESERVED.
+        </div>
+    </footer>
+
+</body>
+</html>
